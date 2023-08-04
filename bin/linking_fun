@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Linking binary files"
+echo "ld is primary tool"
+echo "ldd is for print data related to linking"
+

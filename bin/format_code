@@ -1,0 +1,19 @@
+#!/bin/bash
+
+FILE=$1
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+
+if [ ! -f $FILE ]; then
+      echo -e "${RED}File not found! Cannot format${NC}"
+      exit 5
+fi
+echo "Formatting ${FILE}"
+clang-format -i -style=google "${FILE}"
+
+if [ $? -ne 0 ] 
+then
+    echo -e "${RED}Unable to format${NC}"
+fi
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "This shows the header information. Headers, architecture, start address"
+objdump -f ./bin/main
+
+echo "Prints the object format specific header contents"
+echo "Shows dynamically linked libraries"
+objdump -p ./bin/main
+
+echo "-h: prints the different sections of the binary"
+echo "VMA = virtual memory address"
+echo "LMA = logical memory address"
+objdump -h ./bin/main
+
+echo "-x: displays the contents of all section headers"
+objdump -x ./bin/main
+
+echo "-d: display assembler contents of executable sections"
+objdump -d ./bin/main
+
+echo "-D: displays asseembler contents of all sections"
+objdump -D ./bin/main
+
+echo "-s displays full contents of all sections"
+echo "no assembler. Just straight binary"
+objdump -s ./bin/main
+
+echo "-g: display debug information"
+objdump -g ./.bin/main
+
+echo "-t: displays symbol table"
+echo "-T: displays dynamic symbol table"
+echo "-R: display dynamic relocation entries"
+echo "-j.SECTIONNAME displays a specific section"
+objdump -s -j.main ./bin/main
